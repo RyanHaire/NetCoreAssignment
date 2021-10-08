@@ -13,6 +13,9 @@
 </head>
 <body>
     <h5 class="bg-primary text-white text-center m-2 p-2">Sign Up</h5>
+    @if(ViewBag.UserFound == true) {
+        <p>A user with this email address already exists! Do you want to <a asp-action="Login">login</a>?</p>
+    }
     <form asp-action="Index" method="post" class="m-2">
         <div asp-validation-summary="All"></div>
         <div class="form-group">

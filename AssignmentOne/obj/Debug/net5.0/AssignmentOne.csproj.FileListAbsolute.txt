@@ -34,3 +34,4 @@ C:\Users\RWHai\NetCoreApps\AssignmentOne\AssignmentOne\bin\Debug\net5.0\Assignme
 C:\Users\RWHai\NetCoreApps\AssignmentOne\AssignmentOne\obj\Debug\net5.0\AssignmentOne.Views.pdb
 C:\Users\RWHai\NetCoreApps\AssignmentOne\AssignmentOne\obj\Debug\net5.0\AssignmentOne.genruntimeconfig.cache
 C:\Users\RWHai\NetCoreApps\AssignmentOne\AssignmentOne\obj\Debug\net5.0\AssignmentOne.csproj.CopyComplete
+C:\Users\RWHai\NetCoreApps\AssignmentOne\AssignmentOne\obj\Debug\net5.0\Razor\Views\Home\Login.cshtml.g.cs
