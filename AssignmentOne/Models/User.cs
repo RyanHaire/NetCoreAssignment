@@ -1,8 +1,11 @@
+using System;
 using System.ComponentModel.DataAnnotations;
 namespace AssignmentOne.Models
 {
     public class User
     {
+        public Guid Id { get; set; }
+
         [Required(ErrorMessage="Please enter your first name")]
         public string FirstName { get; set; }
 
@@ -20,10 +23,14 @@ namespace AssignmentOne.Models
 
         public string PhoneNumber { get; set; }
 
+        [DataType(DataType.Password)]
         [Required(ErrorMessage="Please enter a password")]
         public string Password { get; set; }
 
+        [DataType(DataType.Password)]
         [Required(ErrorMessage="Please confirm your password")]
         public string ConfirmPassword{ get; set; }
+
+        public bool IsLoggedIn { get; set; } = false;
     }
 }

@@ -1,0 +1,44 @@
+@{
+    Layout = null;
+    var data = ViewBag.Users;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css">
+    <title>Dashboard</title>
+</head>
+<body class="text-center">
+    <h5 class="bg-primary text-white text-center m-2 p-2">User Listing</h5>
+    <p>
+        @* <a class="btn btn-primary" asp-action="Dashboard">Dashboard</a> *@
+        @Html.ActionLink("Dashboard", "Dashboard", "Home", (User)ViewBag.User, new {@class = "btn btn-primary"})
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone Number</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(var i = 0; i < data.Count; i++) {
+                <tr>
+                    <th scope="row">@(i+1)</th>
+                    <td>@data[i].FirstName</td>
+                    <td>@data[i].LastName</td>
+                    <td>@data[i].Email</td>
+                    <td>@data[i].PhoneNumber</td>
+                </tr>
+            }
+            
+        </tbody>
+    </table>
+</body>
+</html>

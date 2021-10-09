@@ -9,5 +9,10 @@ namespace AssignmentOne.Models
         {
             users.Add(user);
         }
+
+        public static void ReplaceUser(User user) {
+            users.Remove(user);
+            users.Add(user);
+        }
     }
 }

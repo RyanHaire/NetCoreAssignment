@@ -1,3 +1,4 @@
+@model AssignmentOne.Models.LoginModel
 @{
     Layout = null;
 }
@@ -8,14 +9,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css">
-    <title>Document</title>
+    <title>Login</title>
 </head>
 <body>
     <h5 class="bg-primary text-white text-center m-2 p-2">Login</h5>
     @if(ViewBag.UserFound == false) {
-        
+        <p>User with email does not exist, would you like to <a asp-action="Index">sign up</a>?</p>
     }
-    <form asp-action="Index" method="post" class="m-2">
+    <form asp-action="Login" method="post" class="m-2">
         <div asp-validation-summary="All"></div>
         <div class="form-group">
             <label asp-for="Email">Email:</label>
@@ -26,8 +27,8 @@
             <input asp-for="Password" class="form-control"/>
         </div>
         <div class="text-center">
-            <button type="submit" class="btn btn-primary w-50">Sign Up</button>
-            <a asp-action="Login" class="btn btn-secondary">Login</a>
+            <button type="submit" class="btn btn-primary w-50">Login</button>
+            <a asp-action="Index" class="btn btn-secondary">Sign Up</a>
         </div>
        
     </form>

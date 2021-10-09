@@ -15624,8 +15624,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\RWHai\\NetCoreApps\\AssignmentOne\\AssignmentOne\\Views\\Home\\UserListing.cshtml",
+      "TargetPath": "Views\\Home\\UserListing.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\RWHai\\NetCoreApps\\AssignmentOne\\AssignmentOne\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\RWHai\\NetCoreApps\\AssignmentOne\\AssignmentOne\\Views\\Home\\Dashboard.cshtml",
+      "TargetPath": "Views\\Home\\Dashboard.cshtml",
       "FileKind": "mvc"
     },
     {

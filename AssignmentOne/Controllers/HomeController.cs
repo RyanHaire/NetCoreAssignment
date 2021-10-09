@@ -41,9 +41,67 @@ namespace AssignmentOne.Controllers
             }
         }
 
+        [HttpGet]
         public IActionResult Login() 
         {
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult Login(LoginModel user) 
+        {
+             if(ModelState.IsValid) {
+                var found = Repository.Users.Where(u => u.Email.ToLower().Equals(user.Email.ToLower()) && u.Password.Equals(user.Password)).FirstOrDefault();
+
+                // turn found user into list and if there is a user return the view 
+                if(found == null) 
+                {
+                    ViewBag.UserFound = false;
+                    return View();
+                } 
+                else 
+                {
+                    found.IsLoggedIn = true;
+                    return RedirectToAction("Dashboard", found);
+                }
+            } 
+            else 
+            {
+                return View();
+            }
+        }
+
+        [HttpGet]
+        public IActionResult Dashboard(User user) 
+        {
+            ViewBag.User = user;
+            if(user.IsLoggedIn) {
+                TempData["userEmail"] = user.Email;
+                return View();
+            }
+            else {
+                return RedirectToAction("Login");
+            }
+        }
+
+        [HttpGet]
+        public IActionResult UserListing() 
+        {   
+           
+            if(TempData["userEmail"] == null) {
+                return RedirectToAction("Login");
+            } else {
+                ViewBag.User = Repository.Users.Where(u => u.Email == TempData["userEmail"].ToString()).First();
+                ViewBag.Users = Repository.Users;
+                return View();
+            }
+        }
+
+        [HttpGet]
+        public IActionResult SignOut(string email) {
+            TempData["userEmail"] = null;
+            Repository.Users.Where(u => u.Email == email).First().IsLoggedIn = false;
+            return RedirectToAction("Login");
         }
     }
 }
